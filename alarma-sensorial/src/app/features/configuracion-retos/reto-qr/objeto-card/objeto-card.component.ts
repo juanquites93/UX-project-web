@@ -4,12 +4,12 @@ import { Component, input, model } from '@angular/core';
   selector: 'app-objeto-card',
   standalone: true,
   template: `
-    <div class="border border-alarma-border rounded-[0.5vw] p-[1.3vw]">
+    <div class="border border-alarma-border rounded-[0.5vw] p-[1.3vw] h-full flex flex-col">
       <h3 class="text-[1.3vw] font-bold text-alarma-primary">{{ name() }}</h3>
       <p class="text-[0.9vw] text-alarma-muted mb-[1.2vh]">{{ subtitle() }}</p>
 
       <!-- Image Slot -->
-      <div class="w-full h-[11.4vh] border-2 border-dashed border-alarma-border rounded-[0.5vw] flex items-center justify-center text-alarma-muted text-[0.9vw] mb-[1.6vh]">
+      <div class="w-full flex-1 min-h-[8vh] border-2 border-dashed border-alarma-border rounded-[0.5vw] flex items-center justify-center text-alarma-muted text-[0.9vw] mb-[1.6vh]">
         Slot
       </div>
 

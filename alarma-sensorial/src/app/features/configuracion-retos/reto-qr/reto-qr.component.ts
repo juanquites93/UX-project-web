@@ -10,31 +10,27 @@ import { InfoBannerComponent } from '../../../shared/info-banner/info-banner.com
   template: `
     <div class="flex h-full">
       <!-- Objects List -->
-      <div class="flex-1 p-[2.1vw] overflow-auto">
+      <div class="flex-1 px-[4vw] py-[2.1vw] overflow-auto flex flex-col justify-between">
         <!-- Title -->
-        <div class="flex items-center gap-[0.8vw] border border-alarma-border rounded-[0.5vw] px-[1vw] py-[1.2vh] mb-[3.3vh] w-fit">
+        <div class="flex items-center gap-[0.8vw] border border-alarma-border rounded-[0.5vw] px-[1vw] py-[1.2vh] mb-[2vh] w-fit">
           <svg xmlns="http://www.w3.org/2000/svg" style="width:1.6vw;height:1.6vw" viewBox="0 0 24 24" fill="none"
                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="10"/>
             <polyline points="12 6 12 12 16 14"/>
           </svg>
-          <span class="text-[1.6vw] font-semibold text-alarma-primary">Objetos registrados</span>
+          <span class="text-[1.6vw] font-semibold text-alarma-primary">Objetos registrados para scan</span>
         </div>
 
         <!-- Object Cards -->
-        <div class="flex flex-col gap-[1vh] mb-[2.4vh]">
-          <app-objeto-card name="Máquina de afeitar" subtitle="Usado hace 2 días" [(isUsing)]="maquinaUsing" />
-          <app-objeto-card name="Qr personalizado" subtitle="Usado hace 2 días" [(isUsing)]="qrUsing" />
+        <div class="flex flex-col gap-[1.5vh] flex-1 mb-[2vh]">
+          <app-objeto-card name="Máquina de afeitar" subtitle="Usado hace 2 días" [(isUsing)]="maquinaUsing" class="flex-1" />
+          <app-objeto-card name="Qr personalizado" subtitle="Usado hace 2 días" [(isUsing)]="qrUsing" class="flex-1" />
         </div>
 
         <!-- New Registration Button -->
         <button (click)="showRegistroPanel.set(!showRegistroPanel())"
-                class="flex items-center justify-center gap-[0.5vw] w-full py-[1.2vh] border-2 border-alarma-border rounded-full text-[1.05vw] font-medium hover:bg-gray-50 transition-colors mb-[2.4vh]">
-          @if (showRegistroPanel()) {
-            Cerrar registro
-          } @else {
-            Nuevo registro
-          }
+                class="flex items-center justify-center gap-[0.5vw] w-full py-[1.2vh] border-2 border-alarma-border rounded-[0.5vw] text-[1.05vw] font-medium hover:bg-gray-50 transition-colors mb-[2vh]">
+          Registrar nuevo objeto a escanear
           <svg xmlns="http://www.w3.org/2000/svg" style="width:1.3vw;height:1.3vw" viewBox="0 0 24 24" fill="none"
                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="10"/>
@@ -44,7 +40,7 @@ import { InfoBannerComponent } from '../../../shared/info-banner/info-banner.com
         </button>
 
         <!-- Action Buttons -->
-        <div class="flex gap-[0.8vw] mb-[1.6vh]">
+        <div class="flex justify-center gap-[0.8vw] mb-[1.6vh]">
           <button class="px-[1.6vw] py-[1vh] border-2 border-alarma-primary text-alarma-primary rounded-[0.5vw] text-[1.05vw] font-medium hover:bg-alarma-accent transition-colors">
             Probar reto
           </button>
@@ -52,7 +48,6 @@ import { InfoBannerComponent } from '../../../shared/info-banner/info-banner.com
             Guardar
           </button>
         </div>
-
         <app-info-banner text="Para probar la configuración ten en tu mano el celular con tu aplicación abierta" />
       </div>
 

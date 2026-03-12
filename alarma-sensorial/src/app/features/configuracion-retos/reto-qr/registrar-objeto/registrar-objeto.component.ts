@@ -7,7 +7,9 @@ import { FormsModule } from '@angular/forms';
   imports: [FormsModule],
   template: `
     <div class="w-[21.2vw] min-w-[21.2vw] border-l border-alarma-border p-[1.6vw] flex flex-col gap-[2vh] h-full overflow-auto">
-      <h2 class="text-[1.3vw] font-bold text-alarma-primary border-b border-alarma-border pb-[1.2vh]">Registrar nuevo objeto</h2>
+      <div class="border border-alarma-border rounded-[0.5vw] px-[1vw] py-[1.2vh]">
+        <span class="text-[1.3vw] font-semibold text-alarma-primary whitespace-nowrap">Registrar nuevo objeto</span>
+      </div>
 
       <!-- Nombre -->
       <div>
@@ -39,9 +41,9 @@ import { FormsModule } from '@angular/forms';
       </div>
 
       <!-- Imagen -->
-      <div>
+      <div class="flex-1 flex flex-col">
         <label class="block text-[0.9vw] font-medium mb-[0.6vh]">Imagen</label>
-        <div class="w-full h-[16.3vh] border border-alarma-border rounded-[0.5vw] flex items-center justify-center bg-white">
+        <div class="w-full flex-1 min-h-[12vh] border border-alarma-border rounded-[0.5vw] flex items-center justify-center bg-white">
           <svg xmlns="http://www.w3.org/2000/svg" style="width:2.6vw;height:2.6vw" viewBox="0 0 24 24" fill="none"
                stroke="#cbd5e1" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
             <path d="M12 2v20"/>
@@ -69,7 +71,7 @@ import { FormsModule } from '@angular/forms';
         <span>Solo se permiten objetos que aparezcan dentro del tipo de objetos y códigos qr</span>
       </div>
 
-      <button class="flex items-center justify-center gap-[0.5vw] w-full py-[1vh] border border-alarma-border rounded-[0.5vw] text-[1.05vw] font-medium hover:bg-gray-50 transition-colors">
+      <button (click)="close.emit()" class="flex items-center justify-center gap-[0.5vw] w-full py-[1vh] border border-alarma-border rounded-[0.5vw] text-[1.05vw] font-medium hover:bg-gray-50 transition-colors">
         Guardar
         <svg xmlns="http://www.w3.org/2000/svg" style="width:1.05vw;height:1.05vw" viewBox="0 0 24 24" fill="none"
              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">

@@ -9,28 +9,30 @@ import { ChallengeCardComponent } from './challenge-card/challenge-card.componen
   template: `
     <div class="flex h-full">
       <!-- Middle Column: Challenge Cards -->
-      <div class="w-[18.5vw] min-w-[18.5vw] border-r border-alarma-border p-[1vw] flex flex-col gap-[1vh]">
-        <a routerLink="matematico" (click)="setActive('matematico')">
-          <app-challenge-card
-            title="Problemas matemáticos"
-            [icon]="calculatorIcon"
-            [(checked)]="mathEnabled"
-            [active]="activeChallenge() === 'matematico'" />
-        </a>
-        <a routerLink="qr" (click)="setActive('qr')">
-          <app-challenge-card
-            title="Escáner código QR"
-            [icon]="qrIcon"
-            [(checked)]="qrEnabled"
-            [active]="activeChallenge() === 'qr'" />
-        </a>
-        <a routerLink="caminar" (click)="setActive('caminar')">
-          <app-challenge-card
-            title="Caminar pasos"
-            [icon]="walkIcon"
-            [(checked)]="walkEnabled"
-            [active]="activeChallenge() === 'caminar'" />
-        </a>
+      <div class="w-[18.5vw] min-w-[18.5vw] border-r border-alarma-border px-[1.2vw] pt-[6vh] pb-[1.6vh] flex flex-col">
+        <div class="flex flex-col gap-[2vh]">
+          <a routerLink="matematico" (click)="setActive('matematico')">
+            <app-challenge-card
+              title="Problemas matemáticos"
+              [icon]="calculatorIcon"
+              [(checked)]="mathEnabled"
+              [active]="activeChallenge() === 'matematico'" />
+          </a>
+          <a routerLink="qr" (click)="setActive('qr')">
+            <app-challenge-card
+              title="Escáner código QR"
+              [icon]="qrIcon"
+              [(checked)]="qrEnabled"
+              [active]="activeChallenge() === 'qr'" />
+          </a>
+          <a routerLink="caminar" (click)="setActive('caminar')">
+            <app-challenge-card
+              title="Caminar pasos"
+              [icon]="walkIcon"
+              [(checked)]="walkEnabled"
+              [active]="activeChallenge() === 'caminar'" />
+          </a>
+        </div>
       </div>
 
       <!-- Right Content Area -->

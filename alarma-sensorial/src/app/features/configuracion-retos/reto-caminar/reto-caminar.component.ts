@@ -48,6 +48,7 @@ import { InfoBannerComponent } from '../../../shared/info-banner/info-banner.com
                  [min]="0" [max]="100" [step]="1"
                  [ngModel]="sliderValue()"
                  (ngModelChange)="sliderValue.set($event)"
+                 [style.--slider-progress]="sliderValue() + '%'"
                  class="w-full h-[0.5vh] rounded-[0.5vw] appearance-none cursor-pointer slider-custom" />
           <div class="flex justify-between text-[0.9vw] text-alarma-muted mt-[0.4vh]">
             <span>0 segundos</span>

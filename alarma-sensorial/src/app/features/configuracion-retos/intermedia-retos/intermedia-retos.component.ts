@@ -12,7 +12,7 @@ import { Component } from '@angular/core';
         <path d="M12 16v-4"/>
         <path d="M12 8h.01"/>
       </svg>
-      <p class="text-[1.2vw] text-alarma-primary leading-relaxed">
+      <p class="text-[1.2vw] text-alarma-primary leading-relaxed font-semibold">
         Selecciona uno de los botones a tu izquierda para acceder al menú de
         configuración de cada reto que sonará cuando suene tu alarma
       </p>

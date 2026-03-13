@@ -16,9 +16,10 @@ import { Alarma, AlarmasTableComponent } from '../../../shared/alarmas-table/ala
         <h2 class="text-[1.8vw] font-bold text-alarma-primary mb-[2vh] flex justify-center">Selecciona la alarma a configurar retos</h2>
         
         <!-- Tabla de alarmas -->
-        <app-alarmas-table 
-          [alarmas]="alarmas()" 
+        <app-alarmas-table
+          [alarmas]="alarmas()"
           [modificable]="false"
+          [clickableRows]="true"
         />
       </div>
     </div>

@@ -39,7 +39,7 @@ export interface Alarma {
         </thead>
         <tbody>
           @for (alarma of alarmas; track alarma.id) {
-            <tr (click)="onRowClick(alarma.id)" class="hover:bg-gray-50 transition-colors cursor-pointer">
+            <tr (click)="onRowClick(alarma.id)" [class]="clickableRows ? 'hover:bg-gray-50 transition-colors cursor-pointer' : ''">
               <td class="px-[1vw] py-[1.2vh] text-[0.9vw] border-b border-gray-200">{{ alarma.hora }}</td>
               <td class="px-[1vw] py-[1.2vh] text-[0.9vw] border-b border-gray-200">{{ alarma.nombre }}</td>
               <td class="px-[1vw] py-[1.2vh] border-b border-gray-200" (click)="$event.stopPropagation()">
@@ -86,10 +86,13 @@ export class AlarmasTableComponent {
   
   @Input() alarmas: Alarma[] = [];
   @Input() modificable: boolean = true;
+  @Input() clickableRows: boolean = false;
   @Output() toggleAlarma = new EventEmitter<number>();
 
   onRowClick(alarmaId: number) {
-    this.router.navigate(['/configuracion-retos']);
+    if (this.clickableRows) {
+      this.router.navigate(['/configuracion-retos']);
+    }
   }
 
   onToggleAlarma(id: number) {

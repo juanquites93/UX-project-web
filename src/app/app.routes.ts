@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'configuracion-retos', pathMatch: 'full' },
+  { path: '', redirectTo: 'principal', pathMatch: 'full' },
   {
     path: 'principal',
     loadComponent: () => import('./features/principal/principal.component').then(m => m.PrincipalComponent)

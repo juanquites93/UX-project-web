@@ -21,23 +21,40 @@ import { FormsModule } from '@angular/forms';
       </div>
 
       <!-- Tipo de objeto -->
-      <div>
+      <div class="relative">
         <label class="block text-[0.9vw] font-medium mb-[0.6vh]">Tipo de objeto</label>
-        <div class="border border-alarma-border rounded-[0.5vw] overflow-hidden">
-          @for (tipo of tiposObjeto; track tipo) {
-            <button (click)="selectedTipo.set(tipo)"
-                    class="flex items-center gap-[0.5vw] w-full px-[0.8vw] py-[0.8vh] text-[0.9vw] text-left border-b border-alarma-border last:border-b-0 hover:bg-gray-50 transition-colors"
-                    [class.font-medium]="selectedTipo() === tipo">
-              @if (selectedTipo() === tipo) {
-                <svg xmlns="http://www.w3.org/2000/svg" style="width:1.05vw;height:1.05vw" viewBox="0 0 24 24" fill="none"
-                     stroke="#31111d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M20 6 9 17l-5-5"/>
-                </svg>
-              }
-              {{ tipo }}
-            </button>
-          }
-        </div>
+        <button (click)="dropdownOpen.set(!dropdownOpen())"
+                class="flex items-center justify-between w-full px-[0.8vw] py-[0.8vh] border border-alarma-border rounded-[0.5vw] text-[0.9vw] text-left hover:bg-gray-50 transition-colors">
+          <div class="flex items-center gap-[0.5vw]">
+            <svg xmlns="http://www.w3.org/2000/svg" style="width:1.05vw;height:1.05vw" viewBox="0 0 24 24" fill="none"
+                 stroke="#31111d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 6 9 17l-5-5"/>
+            </svg>
+            {{ selectedTipo() }}
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" style="width:1vw;height:1vw" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+               class="transition-transform" [class.rotate-180]="dropdownOpen()">
+            <path d="m6 9 6 6 6-6"/>
+          </svg>
+        </button>
+        @if (dropdownOpen()) {
+          <div class="absolute z-10 w-full mt-[0.4vh] border border-alarma-border rounded-[0.5vw] bg-white shadow-lg overflow-hidden">
+            @for (tipo of tiposObjeto; track tipo) {
+              <button (click)="selectTipo(tipo)"
+                      class="flex items-center gap-[0.5vw] w-full px-[0.8vw] py-[0.8vh] text-[0.9vw] text-left border-b border-alarma-border last:border-b-0 hover:bg-gray-50 transition-colors"
+                      [class.font-medium]="selectedTipo() === tipo">
+                @if (selectedTipo() === tipo) {
+                  <svg xmlns="http://www.w3.org/2000/svg" style="width:1.05vw;height:1.05vw" viewBox="0 0 24 24" fill="none"
+                       stroke="#31111d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 6 9 17l-5-5"/>
+                  </svg>
+                }
+                {{ tipo }}
+              </button>
+            }
+          </div>
+        }
       </div>
 
       <!-- Imagen -->
@@ -87,5 +104,11 @@ export class RegistrarObjetoComponent {
   close = output();
   nombre = '';
   selectedTipo = signal('Utensilio de cocina');
+  dropdownOpen = signal(false);
   tiposObjeto = ['Utensilio de cocina', 'Aseo', 'Código QR'];
+
+  selectTipo(tipo: string) {
+    this.selectedTipo.set(tipo);
+    this.dropdownOpen.set(false);
+  }
 }

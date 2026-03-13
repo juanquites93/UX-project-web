@@ -48,9 +48,9 @@ La aplicacion cuenta con un **sidebar lateral** con 5 secciones:
 
 5. **Configuracion de perfiles** - Gestion de perfiles de usuario.
 
-## Nota sobre el sistema de diseno
+## Nota sobre el sistema de diseño
 
-El diseno de la interfaz fue creado en Figma utilizando el sistema de diseno **shadcn/ui**, el cual esta basado en **Radix UI** y esta pensado originalmente para **React**. Dado que este proyecto esta desarrollado en **Angular**, se utilizo **Spartan NG**, una libreria que adapta los componentes de shadcn/ui al ecosistema de Angular, permitiendo mantener la fidelidad visual del diseno original.
+El diseno de la interfaz fue creado en Figma utilizando el sistema de diseño **shadcn/ui**, el cual esta basado en **Radix UI** y esta pensado originalmente para **React**. Dado que este proyecto esta desarrollado en **Angular**, se utilizo **Spartan NG**, una libreria que adapta los componentes de shadcn/ui al ecosistema de Angular, permitiendo mantener la fidelidad visual del diseno original.
 
 ## Tecnologias utilizadas
 

@@ -32,6 +32,7 @@ interface DayOfWeek {
 })
 export class WeekDaysSelectorComponent {
   selectedDays = model<number[]>([]);
+  modificable = model(true);
 
   days: DayOfWeek[] = [
     { id: 1, label: 'Lu', value: 'Lunes' },
@@ -44,6 +45,7 @@ export class WeekDaysSelectorComponent {
   ];
 
   toggleDay(dayId: number) {
+    if (!this.modificable()) return;
     const currentSelected = this.selectedDays();
     const index = currentSelected.indexOf(dayId);
     

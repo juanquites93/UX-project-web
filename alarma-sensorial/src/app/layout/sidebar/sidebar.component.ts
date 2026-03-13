@@ -38,7 +38,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 export class SidebarComponent {
   menuItems = [
     { path: '/principal', label: 'Principal', exact: true },
-    { path: '/configuracion-retos', label: 'Configuración retos', exact: false },
+    { path: '/seleccionar-alarma-retos', label: 'Configuración retos', exact: false },
     { path: '/alarmas-respaldo', label: 'Alarmas de respaldo', exact: true },
     { path: '/configuracion-sensorial', label: 'Configuración Sensorial', exact: true },
     { path: '/configuracion-perfiles', label: 'Configuración de perfiles', exact: true },

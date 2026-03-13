@@ -7,6 +7,10 @@ export const routes: Routes = [
     loadComponent: () => import('./features/principal/principal.component').then(m => m.PrincipalComponent)
   },
   {
+    path: 'seleccionar-alarma-retos',
+    loadComponent: () => import('./features/configuracion-retos/selecciona-alarma-retos/selecciona-alarma-retos.component').then(m => m.SeleccionaAlarmaRetosComponent)
+  },
+  {
     path: 'configuracion-retos',
     loadComponent: () => import('./features/configuracion-retos/configuracion-retos.component').then(m => m.ConfiguracionRetosComponent),
     loadChildren: () => import('./features/configuracion-retos/configuracion-retos.routes').then(m => m.CONFIGURACION_RETOS_ROUTES)
